@@ -1,16 +1,82 @@
-# React + Vite
+# Password Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and customizable password generator built with React, Vite, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Adjustable Length**: Generate passwords from 6 to 100 characters using a range slider
+- **Include Numbers**: Toggle to add numeric characters (0-9)
+- **Include Special Characters**: Toggle to add special characters (!@#$%^&*()_+)
+- **Copy to Clipboard**: One-click copy functionality with visual selection feedback
+- **Real-time Generation**: Password automatically regenerates when settings change
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** - UI library
+- **Vite 7** - Build tool and dev server
+- **Tailwind CSS 4** - Utility-first CSS framework
+- **ESLint** - Code linting
 
-## Expanding the ESLint configuration
+## React Hooks Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `useState` - Managing password, length, and toggle states
+- `useCallback` - Memoizing the password generation function
+- `useEffect` - Auto-regenerating password when dependencies change
+- `useRef` - Referencing the password input for clipboard selection
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher recommended)
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository or navigate to the project directory
+cd 05passwordgenerator
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+### Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run lint` | Run ESLint |
+
+## Project Structure
+
+```
+05passwordgenerator/
+├── src/
+│   ├── App.jsx        # Main password generator component
+│   ├── App.css        # Component styles
+│   ├── main.jsx       # React entry point
+│   ├── index.css      # Global styles
+│   └── assets/        # Static assets
+├── public/            # Public assets
+├── index.html         # HTML template
+├── package.json       # Dependencies and scripts
+├── vite.config.js     # Vite configuration
+└── eslint.config.js   # ESLint configuration
+```
+
+## Usage
+
+1. Use the **range slider** to set your desired password length
+2. Check **Numbers** to include digits in your password
+3. Check **Character** to include special characters
+4. Click **Copy** to copy the generated password to your clipboard
+
+## License
+
+This project is for educational purposes.
